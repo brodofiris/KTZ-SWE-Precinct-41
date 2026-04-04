@@ -179,4 +179,9 @@ async def login(form_data: OAuth2PasswordRequestForm = Depends()):
             
         # 3. Issue the token
         token = create_token(user_id=user.id, role=user.role)
-        return {"access_token": token, "token_type": "bearer"}
+        return {
+            "access_token": token,
+            "token_type": "bearer",
+            "first_name": user.first_name,
+            "last_name": user.last_name 
+        }

@@ -99,10 +99,20 @@ async function attemptSignUp() {
         triggerAnimation(authWrapper, 'anim-success', 800);
 
         setTimeout(() => {
-            switchView('login-view');
-            document.getElementById('login-user').value = document.getElementById('reg-opnum').value;
-            document.getElementById('login-pass').value = '';
-        }, 1500);
+            authWrapper.classList.add('hidden');
+            document.getElementById('dashboard-container').classList.remove('hidden');
+            
+            // Reset body styling for full-screen layout
+            document.body.style.alignItems = 'stretch'; 
+            document.body.style.paddingTop = '0';
+            
+            // Set Welcome Message
+            document.getElementById('welcome-message').innerText = `Welcome: ${data.first_name} ${data.last_name}`;
+            
+            // Start Clock and connect WebSocket
+            startClock();
+            connectWebSocket(data.access_token);
+        }, 800);
 
     } catch (error) {
         triggerAnimation(authWrapper, 'anim-shake', 500);
@@ -134,4 +144,14 @@ function connectWebSocket(token) {
         
         output.innerText = text;
     };
+}
+
+// --- Dashboard Utilities ---
+function startClock() {
+    const clockEl = document.getElementById('live-clock');
+    setInterval(() => {
+        const now = new Date();
+        // Formats as MM/DD/YYYY, HH:MM:SS AM/PM based on browser locale
+        clockEl.innerText = now.toLocaleString(); 
+    }, 1000);
 }

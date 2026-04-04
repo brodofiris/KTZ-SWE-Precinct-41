@@ -55,9 +55,35 @@
         </div>
     </div>
 
-    <div id="dashboard-container" class="hidden">
-        <h2 style="color: #3498db;">🚆 Live Telemetry Feed</h2>
-        <div id="telemetry-output">Awaiting systems connection...</div>
+    <div id="dashboard-container" class="hidden dashboard-layout">
+        
+        <aside class="sidebar">
+            <h3 class="brand-logo">🚆 TrainOS</h3>
+            <nav class="sidebar-nav">
+                <a href="#" class="active">Main</a>
+                <a href="#">Details</a>
+                <a href="#">Map</a>
+            </nav>
+        </aside>
+
+        <div class="main-content">
+            
+            <header class="top-header">
+                <div id="welcome-message" class="welcome-text">Welcome: Operator</div>
+                <div id="live-clock" class="clock-text">--/--/---- --:--:--</div>
+                <select id="language-selector" class="lang-select">
+                    <option value="en">English</option>
+                    <option value="ru">Русский</option>
+                    <option value="kk">Қазақша</option>
+                </select>
+            </header>
+
+            <div class="content-body">
+                <h2 style="color: #3498db; text-align: left; margin-top: 0;">Live Telemetry Feed</h2>
+                <div id="telemetry-output">Awaiting systems connection...</div>
+            </div>
+        </div>
+        
     </div>
 
     <script src="/static/script.js"></script>

@@ -1,0 +1,1232 @@
+[
+  {
+    "timestamp": "2026-04-04T11:49:21.970527+00:00",
+    "status": {
+      "system_alert_state": "NORMAL"
+    },
+    "kinematics": {
+      "speed_kmh": 110.22,
+      "distance_to_next_stop_km": 44.97,
+      "distance_to_final_stop_km": 849.97
+    },
+    "environment": {
+      "outside_temperature_c": 15.0,
+      "cabin_temperature_c": 22.0
+    },
+    "engine_and_fuel": {
+      "engine_temperature_c": 90.0,
+      "fuel_level_liters": 14999.4,
+      "fuel_burn_rate_lps": 0.6
+    },
+    "pneumatics": {
+      "main_reservoir_psi": 134.4,
+      "brake_pipe_psi": 90.0
+    },
+    "electrical": {
+      "traction_voltage_v": 802.4,
+      "traction_current_a": 1198.3,
+      "head_end_power_voltage_v": 480.4,
+      "head_end_power_load_kw": 353.3
+    }
+  },
+  {
+    "timestamp": "2026-04-04T11:49:22.971473+00:00",
+    "status": {
+      "system_alert_state": "NORMAL"
+    },
+    "kinematics": {
+      "speed_kmh": 110.28,
+      "distance_to_next_stop_km": 44.94,
+      "distance_to_final_stop_km": 849.94
+    },
+    "environment": {
+      "outside_temperature_c": 15.0,
+      "cabin_temperature_c": 22.0
+    },
+    "engine_and_fuel": {
+      "engine_temperature_c": 90.2,
+      "fuel_level_liters": 14998.8,
+      "fuel_burn_rate_lps": 0.599
+    },
+    "pneumatics": {
+      "main_reservoir_psi": 134.1,
+      "brake_pipe_psi": 89.9
+    },
+    "electrical": {
+      "traction_voltage_v": 816.5,
+      "traction_current_a": 1185.4,
+      "head_end_power_voltage_v": 480.4,
+      "head_end_power_load_kw": 356.9
+    }
+  },
+  {
+    "timestamp": "2026-04-04T11:49:23.973293+00:00",
+    "status": {
+      "system_alert_state": "NORMAL"
+    },
+    "kinematics": {
+      "speed_kmh": 110.01,
+      "distance_to_next_stop_km": 44.91,
+      "distance_to_final_stop_km": 849.91
+    },
+    "environment": {
+      "outside_temperature_c": 15.0,
+      "cabin_temperature_c": 22.0
+    },
+    "engine_and_fuel": {
+      "engine_temperature_c": 90.3,
+      "fuel_level_liters": 14998.21,
+      "fuel_burn_rate_lps": 0.593
+    },
+    "pneumatics": {
+      "main_reservoir_psi": 133.1,
+      "brake_pipe_psi": 89.9
+    },
+    "electrical": {
+      "traction_voltage_v": 807.2,
+      "traction_current_a": 1202.3,
+      "head_end_power_voltage_v": 480.4,
+      "head_end_power_load_kw": 352.0
+    }
+  },
+  {
+    "timestamp": "2026-04-04T11:49:24.974358+00:00",
+    "status": {
+      "system_alert_state": "NORMAL"
+    },
+    "kinematics": {
+      "speed_kmh": 109.72,
+      "distance_to_next_stop_km": 44.88,
+      "distance_to_final_stop_km": 849.88
+    },
+    "environment": {
+      "outside_temperature_c": 15.1,
+      "cabin_temperature_c": 22.0
+    },
+    "engine_and_fuel": {
+      "engine_temperature_c": 90.3,
+      "fuel_level_liters": 14997.61,
+      "fuel_burn_rate_lps": 0.601
+    },
+    "pneumatics": {
+      "main_reservoir_psi": 133.9,
+      "brake_pipe_psi": 89.8
+    },
+    "electrical": {
+      "traction_voltage_v": 810.0,
+      "traction_current_a": 1185.9,
+      "head_end_power_voltage_v": 480.6,
+      "head_end_power_load_kw": 349.2
+    }
+  },
+  {
+    "timestamp": "2026-04-04T11:49:25.975804+00:00",
+    "status": {
+      "system_alert_state": "NORMAL"
+    },
+    "kinematics": {
+      "speed_kmh": 110.07,
+      "distance_to_next_stop_km": 44.85,
+      "distance_to_final_stop_km": 849.85
+    },
+    "environment": {
+      "outside_temperature_c": 15.1,
+      "cabin_temperature_c": 22.0
+    },
+    "engine_and_fuel": {
+      "engine_temperature_c": 90.3,
+      "fuel_level_liters": 14997.01,
+      "fuel_burn_rate_lps": 0.593
+    },
+    "pneumatics": {
+      "main_reservoir_psi": 133.5,
+      "brake_pipe_psi": 89.8
+    },
+    "electrical": {
+      "traction_voltage_v": 810.3,
+      "traction_current_a": 1167.6,
+      "head_end_power_voltage_v": 480.3,
+      "head_end_power_load_kw": 347.6
+    }
+  },
+  {
+    "timestamp": "2026-04-04T11:49:26.978289+00:00",
+    "status": {
+      "system_alert_state": "NORMAL"
+    },
+    "kinematics": {
+      "speed_kmh": 110.4,
+      "distance_to_next_stop_km": 44.82,
+      "distance_to_final_stop_km": 849.82
+    },
+    "environment": {
+      "outside_temperature_c": 15.0,
+      "cabin_temperature_c": 22.0
+    },
+    "engine_and_fuel": {
+      "engine_temperature_c": 90.4,
+      "fuel_level_liters": 14996.43,
+      "fuel_burn_rate_lps": 0.584
+    },
+    "pneumatics": {
+      "main_reservoir_psi": 133.4,
+      "brake_pipe_psi": 89.8
+    },
+    "electrical": {
+      "traction_voltage_v": 821.9,
+      "traction_current_a": 1147.8,
+      "head_end_power_voltage_v": 480.8,
+      "head_end_power_load_kw": 352.0
+    }
+  },
+  {
+    "timestamp": "2026-04-04T11:49:27.979966+00:00",
+    "status": {
+      "system_alert_state": "NORMAL"
+    },
+    "kinematics": {
+      "speed_kmh": 110.49,
+      "distance_to_next_stop_km": 44.79,
+      "distance_to_final_stop_km": 849.79
+    },
+    "environment": {
+      "outside_temperature_c": 15.1,
+      "cabin_temperature_c": 22.0
+    },
+    "engine_and_fuel": {
+      "engine_temperature_c": 90.6,
+      "fuel_level_liters": 14995.86,
+      "fuel_burn_rate_lps": 0.574
+    },
+    "pneumatics": {
+      "main_reservoir_psi": 133.6,
+      "brake_pipe_psi": 89.9
+    },
+    "electrical": {
+      "traction_voltage_v": 827.9,
+      "traction_current_a": 1145.0,
+      "head_end_power_voltage_v": 480.4,
+      "head_end_power_load_kw": 347.1
+    }
+  },
+  {
+    "timestamp": "2026-04-04T11:49:28.982103+00:00",
+    "status": {
+      "system_alert_state": "NORMAL"
+    },
+    "kinematics": {
+      "speed_kmh": 110.91,
+      "distance_to_next_stop_km": 44.76,
+      "distance_to_final_stop_km": 849.76
+    },
+    "environment": {
+      "outside_temperature_c": 15.1,
+      "cabin_temperature_c": 22.0
+    },
+    "engine_and_fuel": {
+      "engine_temperature_c": 90.5,
+      "fuel_level_liters": 14995.28,
+      "fuel_burn_rate_lps": 0.573
+    },
+    "pneumatics": {
+      "main_reservoir_psi": 134.6,
+      "brake_pipe_psi": 89.9
+    },
+    "electrical": {
+      "traction_voltage_v": 822.1,
+      "traction_current_a": 1149.8,
+      "head_end_power_voltage_v": 480.5,
+      "head_end_power_load_kw": 351.9
+    }
+  },
+  {
+    "timestamp": "2026-04-04T11:49:29.984131+00:00",
+    "status": {
+      "system_alert_state": "NORMAL"
+    },
+    "kinematics": {
+      "speed_kmh": 111.32,
+      "distance_to_next_stop_km": 44.72,
+      "distance_to_final_stop_km": 849.72
+    },
+    "environment": {
+      "outside_temperature_c": 15.1,
+      "cabin_temperature_c": 22.0
+    },
+    "engine_and_fuel": {
+      "engine_temperature_c": 90.3,
+      "fuel_level_liters": 14994.71,
+      "fuel_burn_rate_lps": 0.575
+    },
+    "pneumatics": {
+      "main_reservoir_psi": 135.2,
+      "brake_pipe_psi": 89.9
+    },
+    "electrical": {
+      "traction_voltage_v": 809.3,
+      "traction_current_a": 1163.8,
+      "head_end_power_voltage_v": 480.5,
+      "head_end_power_load_kw": 356.2
+    }
+  },
+  {
+    "timestamp": "2026-04-04T11:49:30.986796+00:00",
+    "status": {
+      "system_alert_state": "NORMAL"
+    },
+    "kinematics": {
+      "speed_kmh": 111.54,
+      "distance_to_next_stop_km": 44.69,
+      "distance_to_final_stop_km": 849.69
+    },
+    "environment": {
+      "outside_temperature_c": 15.1,
+      "cabin_temperature_c": 22.0
+    },
+    "engine_and_fuel": {
+      "engine_temperature_c": 90.3,
+      "fuel_level_liters": 14994.13,
+      "fuel_burn_rate_lps": 0.582
+    },
+    "pneumatics": {
+      "main_reservoir_psi": 134.6,
+      "brake_pipe_psi": 89.9
+    },
+    "electrical": {
+      "traction_voltage_v": 812.5,
+      "traction_current_a": 1168.7,
+      "head_end_power_voltage_v": 480.3,
+      "head_end_power_load_kw": 352.5
+    }
+  },
+  {
+    "timestamp": "2026-04-04T11:49:31.988474+00:00",
+    "status": {
+      "system_alert_state": "NORMAL"
+    },
+    "kinematics": {
+      "speed_kmh": 111.71,
+      "distance_to_next_stop_km": 44.66,
+      "distance_to_final_stop_km": 849.66
+    },
+    "environment": {
+      "outside_temperature_c": 15.1,
+      "cabin_temperature_c": 22.0
+    },
+    "engine_and_fuel": {
+      "engine_temperature_c": 90.2,
+      "fuel_level_liters": 14993.54,
+      "fuel_burn_rate_lps": 0.584
+    },
+    "pneumatics": {
+      "main_reservoir_psi": 134.6,
+      "brake_pipe_psi": 89.9
+    },
+    "electrical": {
+      "traction_voltage_v": 802.2,
+      "traction_current_a": 1155.9,
+      "head_end_power_voltage_v": 480.1,
+      "head_end_power_load_kw": 354.7
+    }
+  },
+  {
+    "timestamp": "2026-04-04T11:49:32.991673+00:00",
+    "status": {
+      "system_alert_state": "NORMAL"
+    },
+    "kinematics": {
+      "speed_kmh": 111.23,
+      "distance_to_next_stop_km": 44.63,
+      "distance_to_final_stop_km": 849.63
+    },
+    "environment": {
+      "outside_temperature_c": 15.0,
+      "cabin_temperature_c": 22.0
+    },
+    "engine_and_fuel": {
+      "engine_temperature_c": 90.4,
+      "fuel_level_liters": 14992.96,
+      "fuel_burn_rate_lps": 0.578
+    },
+    "pneumatics": {
+      "main_reservoir_psi": 134.7,
+      "brake_pipe_psi": 90.0
+    },
+    "electrical": {
+      "traction_voltage_v": 791.2,
+      "traction_current_a": 1135.2,
+      "head_end_power_voltage_v": 479.9,
+      "head_end_power_load_kw": 356.6
+    }
+  },
+  {
+    "timestamp": "2026-04-04T11:49:33.994770+00:00",
+    "status": {
+      "system_alert_state": "NORMAL"
+    },
+    "kinematics": {
+      "speed_kmh": 111.68,
+      "distance_to_next_stop_km": 44.6,
+      "distance_to_final_stop_km": 849.6
+    },
+    "environment": {
+      "outside_temperature_c": 15.0,
+      "cabin_temperature_c": 22.0
+    },
+    "engine_and_fuel": {
+      "engine_temperature_c": 90.5,
+      "fuel_level_liters": 14992.4,
+      "fuel_burn_rate_lps": 0.568
+    },
+    "pneumatics": {
+      "main_reservoir_psi": 134.3,
+      "brake_pipe_psi": 90.0
+    },
+    "electrical": {
+      "traction_voltage_v": 784.2,
+      "traction_current_a": 1154.0,
+      "head_end_power_voltage_v": 479.7,
+      "head_end_power_load_kw": 354.3
+    }
+  },
+  {
+    "timestamp": "2026-04-04T11:49:34.998126+00:00",
+    "status": {
+      "system_alert_state": "NORMAL"
+    },
+    "kinematics": {
+      "speed_kmh": 111.95,
+      "distance_to_next_stop_km": 44.57,
+      "distance_to_final_stop_km": 849.57
+    },
+    "environment": {
+      "outside_temperature_c": 15.0,
+      "cabin_temperature_c": 22.0
+    },
+    "engine_and_fuel": {
+      "engine_temperature_c": 90.4,
+      "fuel_level_liters": 14991.82,
+      "fuel_burn_rate_lps": 0.577
+    },
+    "pneumatics": {
+      "main_reservoir_psi": 133.7,
+      "brake_pipe_psi": 90.0
+    },
+    "electrical": {
+      "traction_voltage_v": 796.2,
+      "traction_current_a": 1138.0,
+      "head_end_power_voltage_v": 479.9,
+      "head_end_power_load_kw": 352.6
+    }
+  },
+  {
+    "timestamp": "2026-04-04T11:49:36.001182+00:00",
+    "status": {
+      "system_alert_state": "NORMAL"
+    },
+    "kinematics": {
+      "speed_kmh": 111.7,
+      "distance_to_next_stop_km": 44.54,
+      "distance_to_final_stop_km": 849.54
+    },
+    "environment": {
+      "outside_temperature_c": 15.0,
+      "cabin_temperature_c": 22.0
+    },
+    "engine_and_fuel": {
+      "engine_temperature_c": 90.3,
+      "fuel_level_liters": 14991.25,
+      "fuel_burn_rate_lps": 0.569
+    },
+    "pneumatics": {
+      "main_reservoir_psi": 134.7,
+      "brake_pipe_psi": 90.0
+    },
+    "electrical": {
+      "traction_voltage_v": 804.9,
+      "traction_current_a": 1117.8,
+      "head_end_power_voltage_v": 480.4,
+      "head_end_power_load_kw": 350.6
+    }
+  },
+  {
+    "timestamp": "2026-04-04T11:49:37.004784+00:00",
+    "status": {
+      "system_alert_state": "NORMAL"
+    },
+    "kinematics": {
+      "speed_kmh": 111.88,
+      "distance_to_next_stop_km": 44.51,
+      "distance_to_final_stop_km": 849.51
+    },
+    "environment": {
+      "outside_temperature_c": 14.9,
+      "cabin_temperature_c": 22.0
+    },
+    "engine_and_fuel": {
+      "engine_temperature_c": 90.2,
+      "fuel_level_liters": 14990.69,
+      "fuel_burn_rate_lps": 0.559
+    },
+    "pneumatics": {
+      "main_reservoir_psi": 133.9,
+      "brake_pipe_psi": 90.1
+    },
+    "electrical": {
+      "traction_voltage_v": 790.5,
+      "traction_current_a": 1100.8,
+      "head_end_power_voltage_v": 480.5,
+      "head_end_power_load_kw": 347.5
+    }
+  },
+  {
+    "timestamp": "2026-04-04T11:49:38.008360+00:00",
+    "status": {
+      "system_alert_state": "NORMAL"
+    },
+    "kinematics": {
+      "speed_kmh": 112.31,
+      "distance_to_next_stop_km": 44.48,
+      "distance_to_final_stop_km": 849.48
+    },
+    "environment": {
+      "outside_temperature_c": 14.9,
+      "cabin_temperature_c": 22.0
+    },
+    "engine_and_fuel": {
+      "engine_temperature_c": 90.4,
+      "fuel_level_liters": 14990.14,
+      "fuel_burn_rate_lps": 0.55
+    },
+    "pneumatics": {
+      "main_reservoir_psi": 133.9,
+      "brake_pipe_psi": 90.0
+    },
+    "electrical": {
+      "traction_voltage_v": 779.7,
+      "traction_current_a": 1122.0,
+      "head_end_power_voltage_v": 480.8,
+      "head_end_power_load_kw": 350.8
+    }
+  },
+  {
+    "timestamp": "2026-04-04T11:49:39.010800+00:00",
+    "status": {
+      "system_alert_state": "NORMAL"
+    },
+    "kinematics": {
+      "speed_kmh": 111.99,
+      "distance_to_next_stop_km": 44.45,
+      "distance_to_final_stop_km": 849.45
+    },
+    "environment": {
+      "outside_temperature_c": 15.0,
+      "cabin_temperature_c": 22.0
+    },
+    "engine_and_fuel": {
+      "engine_temperature_c": 90.5,
+      "fuel_level_liters": 14989.58,
+      "fuel_burn_rate_lps": 0.561
+    },
+    "pneumatics": {
+      "main_reservoir_psi": 133.3,
+      "brake_pipe_psi": 90.1
+    },
+    "electrical": {
+      "traction_voltage_v": 775.7,
+      "traction_current_a": 1118.0,
+      "head_end_power_voltage_v": 481.2,
+      "head_end_power_load_kw": 355.0
+    }
+  },
+  {
+    "timestamp": "2026-04-04T11:49:40.013474+00:00",
+    "status": {
+      "system_alert_state": "NORMAL"
+    },
+    "kinematics": {
+      "speed_kmh": 111.68,
+      "distance_to_next_stop_km": 44.41,
+      "distance_to_final_stop_km": 849.41
+    },
+    "environment": {
+      "outside_temperature_c": 15.0,
+      "cabin_temperature_c": 22.0
+    },
+    "engine_and_fuel": {
+      "engine_temperature_c": 90.6,
+      "fuel_level_liters": 14989.02,
+      "fuel_burn_rate_lps": 0.559
+    },
+    "pneumatics": {
+      "main_reservoir_psi": 133.7,
+      "brake_pipe_psi": 90.0
+    },
+    "electrical": {
+      "traction_voltage_v": 763.4,
+      "traction_current_a": 1114.1,
+      "head_end_power_voltage_v": 481.2,
+      "head_end_power_load_kw": 355.9
+    }
+  },
+  {
+    "timestamp": "2026-04-04T11:49:41.016832+00:00",
+    "status": {
+      "system_alert_state": "NORMAL"
+    },
+    "kinematics": {
+      "speed_kmh": 111.41,
+      "distance_to_next_stop_km": 44.38,
+      "distance_to_final_stop_km": 849.38
+    },
+    "environment": {
+      "outside_temperature_c": 14.9,
+      "cabin_temperature_c": 22.0
+    },
+    "engine_and_fuel": {
+      "engine_temperature_c": 90.6,
+      "fuel_level_liters": 14988.46,
+      "fuel_burn_rate_lps": 0.557
+    },
+    "pneumatics": {
+      "main_reservoir_psi": 134.5,
+      "brake_pipe_psi": 90.0
+    },
+    "electrical": {
+      "traction_voltage_v": 759.4,
+      "traction_current_a": 1095.4,
+      "head_end_power_voltage_v": 481.6,
+      "head_end_power_load_kw": 353.4
+    }
+  },
+  {
+    "timestamp": "2026-04-04T11:49:42.020476+00:00",
+    "status": {
+      "system_alert_state": "NORMAL"
+    },
+    "kinematics": {
+      "speed_kmh": 111.89,
+      "distance_to_next_stop_km": 44.35,
+      "distance_to_final_stop_km": 849.35
+    },
+    "environment": {
+      "outside_temperature_c": 14.9,
+      "cabin_temperature_c": 22.0
+    },
+    "engine_and_fuel": {
+      "engine_temperature_c": 90.7,
+      "fuel_level_liters": 14987.92,
+      "fuel_burn_rate_lps": 0.548
+    },
+    "pneumatics": {
+      "main_reservoir_psi": 134.4,
+      "brake_pipe_psi": 90.1
+    },
+    "electrical": {
+      "traction_voltage_v": 759.6,
+      "traction_current_a": 1091.6,
+      "head_end_power_voltage_v": 481.2,
+      "head_end_power_load_kw": 352.5
+    }
+  },
+  {
+    "timestamp": "2026-04-04T11:49:43.024420+00:00",
+    "status": {
+      "system_alert_state": "NORMAL"
+    },
+    "kinematics": {
+      "speed_kmh": 111.93,
+      "distance_to_next_stop_km": 44.32,
+      "distance_to_final_stop_km": 849.32
+    },
+    "environment": {
+      "outside_temperature_c": 14.9,
+      "cabin_temperature_c": 22.0
+    },
+    "engine_and_fuel": {
+      "engine_temperature_c": 90.5,
+      "fuel_level_liters": 14987.37,
+      "fuel_burn_rate_lps": 0.546
+    },
+    "pneumatics": {
+      "main_reservoir_psi": 134.7,
+      "brake_pipe_psi": 90.0
+    },
+    "electrical": {
+      "traction_voltage_v": 760.4,
+      "traction_current_a": 1096.4,
+      "head_end_power_voltage_v": 481.1,
+      "head_end_power_load_kw": 354.5
+    }
+  },
+  {
+    "timestamp": "2026-04-04T11:49:44.027333+00:00",
+    "status": {
+      "system_alert_state": "NORMAL"
+    },
+    "kinematics": {
+      "speed_kmh": 112.27,
+      "distance_to_next_stop_km": 44.29,
+      "distance_to_final_stop_km": 849.29
+    },
+    "environment": {
+      "outside_temperature_c": 14.9,
+      "cabin_temperature_c": 22.0
+    },
+    "engine_and_fuel": {
+      "engine_temperature_c": 90.6,
+      "fuel_level_liters": 14986.82,
+      "fuel_burn_rate_lps": 0.548
+    },
+    "pneumatics": {
+      "main_reservoir_psi": 134.3,
+      "brake_pipe_psi": 90.0
+    },
+    "electrical": {
+      "traction_voltage_v": 756.4,
+      "traction_current_a": 1072.8,
+      "head_end_power_voltage_v": 480.6,
+      "head_end_power_load_kw": 351.2
+    }
+  },
+  {
+    "timestamp": "2026-04-04T11:49:45.030760+00:00",
+    "status": {
+      "system_alert_state": "NORMAL"
+    },
+    "kinematics": {
+      "speed_kmh": 112.36,
+      "distance_to_next_stop_km": 44.26,
+      "distance_to_final_stop_km": 849.26
+    },
+    "environment": {
+      "outside_temperature_c": 14.9,
+      "cabin_temperature_c": 22.0
+    },
+    "engine_and_fuel": {
+      "engine_temperature_c": 90.6,
+      "fuel_level_liters": 14986.29,
+      "fuel_burn_rate_lps": 0.536
+    },
+    "pneumatics": {
+      "main_reservoir_psi": 133.4,
+      "brake_pipe_psi": 90.1
+    },
+    "electrical": {
+      "traction_voltage_v": 755.9,
+      "traction_current_a": 1093.2,
+      "head_end_power_voltage_v": 480.4,
+      "head_end_power_load_kw": 354.4
+    }
+  },
+  {
+    "timestamp": "2026-04-04T11:49:46.034634+00:00",
+    "status": {
+      "system_alert_state": "NORMAL"
+    },
+    "kinematics": {
+      "speed_kmh": 112.6,
+      "distance_to_next_stop_km": 44.23,
+      "distance_to_final_stop_km": 849.23
+    },
+    "environment": {
+      "outside_temperature_c": 14.9,
+      "cabin_temperature_c": 22.0
+    },
+    "engine_and_fuel": {
+      "engine_temperature_c": 90.8,
+      "fuel_level_liters": 14985.74,
+      "fuel_burn_rate_lps": 0.547
+    },
+    "pneumatics": {
+      "main_reservoir_psi": 133.7,
+      "brake_pipe_psi": 90.2
+    },
+    "electrical": {
+      "traction_voltage_v": 766.5,
+      "traction_current_a": 1079.7,
+      "head_end_power_voltage_v": 480.0,
+      "head_end_power_load_kw": 358.0
+    }
+  },
+  {
+    "timestamp": "2026-04-04T11:49:47.038807+00:00",
+    "status": {
+      "system_alert_state": "NORMAL"
+    },
+    "kinematics": {
+      "speed_kmh": 112.36,
+      "distance_to_next_stop_km": 44.2,
+      "distance_to_final_stop_km": 849.2
+    },
+    "environment": {
+      "outside_temperature_c": 14.9,
+      "cabin_temperature_c": 22.0
+    },
+    "engine_and_fuel": {
+      "engine_temperature_c": 90.7,
+      "fuel_level_liters": 14985.2,
+      "fuel_burn_rate_lps": 0.54
+    },
+    "pneumatics": {
+      "main_reservoir_psi": 134.1,
+      "brake_pipe_psi": 90.2
+    },
+    "electrical": {
+      "traction_voltage_v": 761.0,
+      "traction_current_a": 1096.1,
+      "head_end_power_voltage_v": 479.8,
+      "head_end_power_load_kw": 361.6
+    }
+  },
+  {
+    "timestamp": "2026-04-04T11:49:48.041924+00:00",
+    "status": {
+      "system_alert_state": "NORMAL"
+    },
+    "kinematics": {
+      "speed_kmh": 111.99,
+      "distance_to_next_stop_km": 44.17,
+      "distance_to_final_stop_km": 849.17
+    },
+    "environment": {
+      "outside_temperature_c": 14.8,
+      "cabin_temperature_c": 21.9
+    },
+    "engine_and_fuel": {
+      "engine_temperature_c": 90.5,
+      "fuel_level_liters": 14984.65,
+      "fuel_burn_rate_lps": 0.548
+    },
+    "pneumatics": {
+      "main_reservoir_psi": 134.1,
+      "brake_pipe_psi": 90.1
+    },
+    "electrical": {
+      "traction_voltage_v": 773.4,
+      "traction_current_a": 1120.2,
+      "head_end_power_voltage_v": 479.5,
+      "head_end_power_load_kw": 361.4
+    }
+  },
+  {
+    "timestamp": "2026-04-04T11:49:49.045601+00:00",
+    "status": {
+      "system_alert_state": "NORMAL"
+    },
+    "kinematics": {
+      "speed_kmh": 111.98,
+      "distance_to_next_stop_km": 44.13,
+      "distance_to_final_stop_km": 849.13
+    },
+    "environment": {
+      "outside_temperature_c": 14.8,
+      "cabin_temperature_c": 21.9
+    },
+    "engine_and_fuel": {
+      "engine_temperature_c": 90.6,
+      "fuel_level_liters": 14984.09,
+      "fuel_burn_rate_lps": 0.56
+    },
+    "pneumatics": {
+      "main_reservoir_psi": 134.8,
+      "brake_pipe_psi": 90.1
+    },
+    "electrical": {
+      "traction_voltage_v": 769.5,
+      "traction_current_a": 1117.7,
+      "head_end_power_voltage_v": 479.7,
+      "head_end_power_load_kw": 363.5
+    }
+  },
+  {
+    "timestamp": "2026-04-04T11:49:50.049834+00:00",
+    "status": {
+      "system_alert_state": "NORMAL"
+    },
+    "kinematics": {
+      "speed_kmh": 111.51,
+      "distance_to_next_stop_km": 44.1,
+      "distance_to_final_stop_km": 849.1
+    },
+    "environment": {
+      "outside_temperature_c": 14.9,
+      "cabin_temperature_c": 21.9
+    },
+    "engine_and_fuel": {
+      "engine_temperature_c": 90.6,
+      "fuel_level_liters": 14983.53,
+      "fuel_burn_rate_lps": 0.559
+    },
+    "pneumatics": {
+      "main_reservoir_psi": 135.6,
+      "brake_pipe_psi": 90.1
+    },
+    "electrical": {
+      "traction_voltage_v": 768.4,
+      "traction_current_a": 1139.0,
+      "head_end_power_voltage_v": 479.7,
+      "head_end_power_load_kw": 359.5
+    }
+  },
+  {
+    "timestamp": "2026-04-04T11:49:51.054216+00:00",
+    "status": {
+      "system_alert_state": "NORMAL"
+    },
+    "kinematics": {
+      "speed_kmh": 111.62,
+      "distance_to_next_stop_km": 44.07,
+      "distance_to_final_stop_km": 849.07
+    },
+    "environment": {
+      "outside_temperature_c": 14.9,
+      "cabin_temperature_c": 21.9
+    },
+    "engine_and_fuel": {
+      "engine_temperature_c": 90.5,
+      "fuel_level_liters": 14982.96,
+      "fuel_burn_rate_lps": 0.57
+    },
+    "pneumatics": {
+      "main_reservoir_psi": 135.8,
+      "brake_pipe_psi": 90.0
+    },
+    "electrical": {
+      "traction_voltage_v": 777.3,
+      "traction_current_a": 1159.5,
+      "head_end_power_voltage_v": 480.0,
+      "head_end_power_load_kw": 358.5
+    }
+  },
+  {
+    "timestamp": "2026-04-04T11:49:52.057849+00:00",
+    "status": {
+      "system_alert_state": "PNEUMATIC_PRESSURE_LOSS"
+    },
+    "kinematics": {
+      "speed_kmh": 111.26,
+      "distance_to_next_stop_km": 44.04,
+      "distance_to_final_stop_km": 849.04
+    },
+    "environment": {
+      "outside_temperature_c": 14.9,
+      "cabin_temperature_c": 21.9
+    },
+    "engine_and_fuel": {
+      "engine_temperature_c": 90.5,
+      "fuel_level_liters": 14982.38,
+      "fuel_burn_rate_lps": 0.58
+    },
+    "pneumatics": {
+      "main_reservoir_psi": 129.6,
+      "brake_pipe_psi": 87.7
+    },
+    "electrical": {
+      "traction_voltage_v": 787.9,
+      "traction_current_a": 1165.5,
+      "head_end_power_voltage_v": 480.3,
+      "head_end_power_load_kw": 357.9
+    }
+  },
+  {
+    "timestamp": "2026-04-04T11:49:53.062884+00:00",
+    "status": {
+      "system_alert_state": "PNEUMATIC_PRESSURE_LOSS"
+    },
+    "kinematics": {
+      "speed_kmh": 111.62,
+      "distance_to_next_stop_km": 44.01,
+      "distance_to_final_stop_km": 849.01
+    },
+    "environment": {
+      "outside_temperature_c": 14.9,
+      "cabin_temperature_c": 21.9
+    },
+    "engine_and_fuel": {
+      "engine_temperature_c": 90.5,
+      "fuel_level_liters": 14981.8,
+      "fuel_burn_rate_lps": 0.583
+    },
+    "pneumatics": {
+      "main_reservoir_psi": 126.8,
+      "brake_pipe_psi": 82.1
+    },
+    "electrical": {
+      "traction_voltage_v": 801.7,
+      "traction_current_a": 1148.4,
+      "head_end_power_voltage_v": 480.2,
+      "head_end_power_load_kw": 355.7
+    }
+  },
+  {
+    "timestamp": "2026-04-04T11:49:54.067871+00:00",
+    "status": {
+      "system_alert_state": "PNEUMATIC_PRESSURE_LOSS"
+    },
+    "kinematics": {
+      "speed_kmh": 112.08,
+      "distance_to_next_stop_km": 43.98,
+      "distance_to_final_stop_km": 848.98
+    },
+    "environment": {
+      "outside_temperature_c": 14.9,
+      "cabin_temperature_c": 21.9
+    },
+    "engine_and_fuel": {
+      "engine_temperature_c": 90.6,
+      "fuel_level_liters": 14981.23,
+      "fuel_burn_rate_lps": 0.574
+    },
+    "pneumatics": {
+      "main_reservoir_psi": 120.5,
+      "brake_pipe_psi": 86.0
+    },
+    "electrical": {
+      "traction_voltage_v": 814.8,
+      "traction_current_a": 1145.0,
+      "head_end_power_voltage_v": 480.1,
+      "head_end_power_load_kw": 355.8
+    }
+  },
+  {
+    "timestamp": "2026-04-04T11:49:55.072535+00:00",
+    "status": {
+      "system_alert_state": "PNEUMATIC_PRESSURE_LOSS"
+    },
+    "kinematics": {
+      "speed_kmh": 111.78,
+      "distance_to_next_stop_km": 43.95,
+      "distance_to_final_stop_km": 848.95
+    },
+    "environment": {
+      "outside_temperature_c": 14.9,
+      "cabin_temperature_c": 21.9
+    },
+    "engine_and_fuel": {
+      "engine_temperature_c": 90.5,
+      "fuel_level_liters": 14980.65,
+      "fuel_burn_rate_lps": 0.572
+    },
+    "pneumatics": {
+      "main_reservoir_psi": 120.3,
+      "brake_pipe_psi": 84.9
+    },
+    "electrical": {
+      "traction_voltage_v": 818.1,
+      "traction_current_a": 1150.1,
+      "head_end_power_voltage_v": 479.6,
+      "head_end_power_load_kw": 354.5
+    }
+  },
+  {
+    "timestamp": "2026-04-04T11:49:56.077528+00:00",
+    "status": {
+      "system_alert_state": "PNEUMATIC_PRESSURE_LOSS"
+    },
+    "kinematics": {
+      "speed_kmh": 112.15,
+      "distance_to_next_stop_km": 43.92,
+      "distance_to_final_stop_km": 848.92
+    },
+    "environment": {
+      "outside_temperature_c": 15.0,
+      "cabin_temperature_c": 21.9
+    },
+    "engine_and_fuel": {
+      "engine_temperature_c": 90.3,
+      "fuel_level_liters": 14980.08,
+      "fuel_burn_rate_lps": 0.575
+    },
+    "pneumatics": {
+      "main_reservoir_psi": 118.6,
+      "brake_pipe_psi": 84.7
+    },
+    "electrical": {
+      "traction_voltage_v": 807.5,
+      "traction_current_a": 1133.2,
+      "head_end_power_voltage_v": 479.8,
+      "head_end_power_load_kw": 352.9
+    }
+  },
+  {
+    "timestamp": "2026-04-04T11:49:57.082846+00:00",
+    "status": {
+      "system_alert_state": "PNEUMATIC_PRESSURE_LOSS"
+    },
+    "kinematics": {
+      "speed_kmh": 112.14,
+      "distance_to_next_stop_km": 43.89,
+      "distance_to_final_stop_km": 848.89
+    },
+    "environment": {
+      "outside_temperature_c": 14.9,
+      "cabin_temperature_c": 21.9
+    },
+    "engine_and_fuel": {
+      "engine_temperature_c": 90.3,
+      "fuel_level_liters": 14979.51,
+      "fuel_burn_rate_lps": 0.567
+    },
+    "pneumatics": {
+      "main_reservoir_psi": 120.8,
+      "brake_pipe_psi": 85.2
+    },
+    "electrical": {
+      "traction_voltage_v": 796.1,
+      "traction_current_a": 1138.0,
+      "head_end_power_voltage_v": 480.0,
+      "head_end_power_load_kw": 355.0
+    }
+  },
+  {
+    "timestamp": "2026-04-04T11:49:58.088182+00:00",
+    "status": {
+      "system_alert_state": "PNEUMATIC_PRESSURE_LOSS"
+    },
+    "kinematics": {
+      "speed_kmh": 111.76,
+      "distance_to_next_stop_km": 43.85,
+      "distance_to_final_stop_km": 848.85
+    },
+    "environment": {
+      "outside_temperature_c": 15.0,
+      "cabin_temperature_c": 21.9
+    },
+    "engine_and_fuel": {
+      "engine_temperature_c": 90.2,
+      "fuel_level_liters": 14978.94,
+      "fuel_burn_rate_lps": 0.569
+    },
+    "pneumatics": {
+      "main_reservoir_psi": 117.0,
+      "brake_pipe_psi": 84.3
+    },
+    "electrical": {
+      "traction_voltage_v": 799.4,
+      "traction_current_a": 1140.4,
+      "head_end_power_voltage_v": 479.6,
+      "head_end_power_load_kw": 357.7
+    }
+  },
+  {
+    "timestamp": "2026-04-04T11:49:59.093075+00:00",
+    "status": {
+      "system_alert_state": "PNEUMATIC_PRESSURE_LOSS"
+    },
+    "kinematics": {
+      "speed_kmh": 112.06,
+      "distance_to_next_stop_km": 43.82,
+      "distance_to_final_stop_km": 848.82
+    },
+    "environment": {
+      "outside_temperature_c": 15.0,
+      "cabin_temperature_c": 22.0
+    },
+    "engine_and_fuel": {
+      "engine_temperature_c": 90.3,
+      "fuel_level_liters": 14978.37,
+      "fuel_burn_rate_lps": 0.57
+    },
+    "pneumatics": {
+      "main_reservoir_psi": 121.5,
+      "brake_pipe_psi": 84.2
+    },
+    "electrical": {
+      "traction_voltage_v": 812.5,
+      "traction_current_a": 1153.8,
+      "head_end_power_voltage_v": 480.0,
+      "head_end_power_load_kw": 356.3
+    }
+  },
+  {
+    "timestamp": "2026-04-04T11:50:00.097093+00:00",
+    "status": {
+      "system_alert_state": "PNEUMATIC_PRESSURE_LOSS"
+    },
+    "kinematics": {
+      "speed_kmh": 112.12,
+      "distance_to_next_stop_km": 43.79,
+      "distance_to_final_stop_km": 848.79
+    },
+    "environment": {
+      "outside_temperature_c": 15.0,
+      "cabin_temperature_c": 22.0
+    },
+    "engine_and_fuel": {
+      "engine_temperature_c": 90.4,
+      "fuel_level_liters": 14977.8,
+      "fuel_burn_rate_lps": 0.577
+    },
+    "pneumatics": {
+      "main_reservoir_psi": 118.7,
+      "brake_pipe_psi": 83.7
+    },
+    "electrical": {
+      "traction_voltage_v": 817.4,
+      "traction_current_a": 1155.5,
+      "head_end_power_voltage_v": 479.7,
+      "head_end_power_load_kw": 357.5
+    }
+  },
+  {
+    "timestamp": "2026-04-04T11:50:01.101728+00:00",
+    "status": {
+      "system_alert_state": "PNEUMATIC_PRESSURE_LOSS"
+    },
+    "kinematics": {
+      "speed_kmh": 112.38,
+      "distance_to_next_stop_km": 43.76,
+      "distance_to_final_stop_km": 848.76
+    },
+    "environment": {
+      "outside_temperature_c": 15.0,
+      "cabin_temperature_c": 22.0
+    },
+    "engine_and_fuel": {
+      "engine_temperature_c": 90.3,
+      "fuel_level_liters": 14977.22,
+      "fuel_burn_rate_lps": 0.578
+    },
+    "pneumatics": {
+      "main_reservoir_psi": 120.3,
+      "brake_pipe_psi": 84.1
+    },
+    "electrical": {
+      "traction_voltage_v": 811.1,
+      "traction_current_a": 1143.3,
+      "head_end_power_voltage_v": 479.3,
+      "head_end_power_load_kw": 354.8
+    }
+  },
+  {
+    "timestamp": "2026-04-04T11:50:02.107422+00:00",
+    "status": {
+      "system_alert_state": "SENSOR_FAILURE"
+    },
+    "kinematics": {
+      "speed_kmh": 112.4,
+      "distance_to_next_stop_km": 43.73,
+      "distance_to_final_stop_km": 848.73
+    },
+    "environment": {
+      "outside_temperature_c": 15.0,
+      "cabin_temperature_c": 22.0
+    },
+    "engine_and_fuel": {
+      "engine_temperature_c": null,
+      "fuel_level_liters": 14976.65,
+      "fuel_burn_rate_lps": 0.572
+    },
+    "pneumatics": {
+      "main_reservoir_psi": 125,
+      "brake_pipe_psi": 88
+    },
+    "electrical": {
+      "traction_voltage_v": 820.7,
+      "traction_current_a": 1145.2,
+      "head_end_power_voltage_v": 479.0,
+      "head_end_power_load_kw": 352.1
+    }
+  }
+]

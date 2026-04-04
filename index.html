@@ -71,11 +71,15 @@
             <header class="top-header">
                 <div id="welcome-message" class="welcome-text">Welcome: Operator</div>
                 <div id="live-clock" class="clock-text">--/--/---- --:--:--</div>
-                <select id="language-selector" class="lang-select">
-                    <option value="en">English</option>
-                    <option value="ru">Русский</option>
-                    <option value="kk">Қазақша</option>
-                </select>
+                
+                <div style="display: flex; gap: 15px; align-items: center;">
+                    <select id="language-selector" class="lang-select">
+                        <option value="en">English</option>
+                        <option value="ru">Русский</option>
+                        <option value="kk">Қазақша</option>
+                    </select>
+                    <button id="theme-toggle" class="theme-btn" onclick="toggleTheme()">🌙</button>
+                </div>
             </header>
 
             <div class="content-body">

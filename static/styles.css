@@ -157,3 +157,30 @@ button:hover { background-color: #2980b9; }
     100% { transform: scale(1); box-shadow: 0 8px 24px rgba(0,0,0,0.05); }
 }
 .anim-success { animation: successPulse 0.8s ease-out; }
+
+/* --- THEME TOGGLE BUTTON --- */
+.theme-btn {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    transition: transform 0.3s;
+    outline: none;
+}
+.theme-btn:hover { transform: scale(1.1); }
+
+/* --- DARK MODE OVERRIDES --- */
+body.dark-theme { background-color: #121212; color: #e0e0e0; }
+body.dark-theme .dashboard-layout { background-color: #121212; }
+body.dark-theme .top-header { background-color: #1e1e1e; box-shadow: 0 2px 10px rgba(0,0,0,0.5); }
+body.dark-theme .welcome-text { color: #e0e0e0; }
+body.dark-theme .lang-select { background-color: #2c2c2c; color: white; border-color: #444; }
+
+/* Let's make sure the login screen looks good in dark mode too! */
+body.dark-theme .container { background-color: #1e1e1e; border-top: 5px solid #2980b9; box-shadow: 0 8px 24px rgba(0,0,0,0.5); }
+body.dark-theme h2 { color: #e0e0e0; }
+body.dark-theme label { color: #bbb; }
+body.dark-theme input { background-color: #2c2c2c; color: white; border-color: #444; }
+body.dark-theme input:focus { border-color: #2980b9; }

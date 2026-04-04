@@ -35,7 +35,7 @@ async function attemptLogin() {
             headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
             body: formData
         });
-
+        
         if (!response.ok) throw new Error("Invalid credentials");
 
         const data = await response.json();
@@ -47,8 +47,9 @@ async function attemptLogin() {
         setTimeout(() => {
             authWrapper.classList.add('hidden');
             document.getElementById('dashboard-container').classList.remove('hidden');
-            document.body.style.alignItems = 'flex-start'; 
-            document.body.style.paddingTop = '40px';
+            document.body.style.alignItems = 'stretch';
+            document.body.style.paddingTop = '0';
+            startClock();
             connectWebSocket(data.access_token);
         }, 800);
 
@@ -89,9 +90,10 @@ async function attemptSignUp() {
             })
         });
 
+        const data = await response.json();
+
         if (!response.ok) {
-            const errorData = await response.json();
-            throw new Error(errorData.detail || "Registration failed");
+            throw new Error(data.detail || "Registration failed");
         }
 
         errorMsg.style.color = '#2ecc71';
@@ -155,3 +157,31 @@ function startClock() {
         clockEl.innerText = now.toLocaleString(); 
     }, 1000);
 }
+
+// --- Theme Toggle Logic ---
+function toggleTheme() {
+    const body = document.body;
+    const btn = document.getElementById('theme-toggle');
+    
+    // Toggle the class on the body
+    body.classList.toggle('dark-theme');
+    
+    // Check if the class is now active and update icon + storage
+    if (body.classList.contains('dark-theme')) {
+        btn.innerText = '☀️';
+        localStorage.setItem('trainos_theme', 'dark');
+    } else {
+        btn.innerText = '🌙';
+        localStorage.setItem('trainos_theme', 'light');
+    }
+}
+
+// --- Initialize Theme on Page Load ---
+window.addEventListener('DOMContentLoaded', () => {
+    // Check if the user previously chose dark mode
+    if (localStorage.getItem('trainos_theme') === 'dark') {
+        document.body.classList.add('dark-theme');
+        const btn = document.getElementById('theme-toggle');
+        if (btn) btn.innerText = '☀️';
+    }
+});

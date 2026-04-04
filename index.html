@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Train Telemetry Dashboard</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+
+    <div id="auth-wrapper" class="container">
+        
+        <div id="login-view">
+            <h2>Train Systems Login</h2>
+            <div class="form-group">
+                <label>Operator Username</label>
+                <input type="text" id="login-user" placeholder="e.g. admin">
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" id="login-pass" placeholder="Enter password">
+            </div>
+            <button onclick="attemptLogin()">Login</button>
+            <div id="login-error" class="error-text"></div>
+            <a class="toggle-link" onclick="switchView('signup-view')">New operator? Sign up here</a>
+        </div>
+
+        <div id="signup-view" class="hidden">
+            <h2>Operator Registration</h2>
+            <div style="display: flex; gap: 10px;">
+                <div class="form-group" style="flex: 1;">
+                    <label>First Name</label>
+                    <input type="text" id="reg-fname">
+                </div>
+                <div class="form-group" style="flex: 1;">
+                    <label>Last Name</label>
+                    <input type="text" id="reg-lname">
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Operator Number</label>
+                <input type="text" id="reg-opnum">
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" id="reg-pass">
+            </div>
+            <div class="form-group">
+                <label>Repeat Password</label>
+                <input type="password" id="reg-pass2">
+            </div>
+            <button onclick="attemptSignUp()">Register Operator</button>
+            <div id="signup-error" class="error-text"></div>
+            <a class="toggle-link" onclick="switchView('login-view')">Already registered? Log in</a>
+        </div>
+    </div>
+
+    <div id="dashboard-container" class="hidden">
+        <h2 style="color: #3498db;">🚆 Live Telemetry Feed</h2>
+        <div id="telemetry-output">Awaiting systems connection...</div>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>

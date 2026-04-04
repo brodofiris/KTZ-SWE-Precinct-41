@@ -37,3 +37,9 @@ class TelemetryEntry(BaseModel):
     engine_and_fuel: EngineAndFuel
     pneumatics: Pneumatics
     electrical: Electrical
+
+class UserCreate(BaseModel):
+    first_name: str
+    last_name: str
+    operator_id: str
+    password: str

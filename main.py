@@ -1,16 +1,21 @@
 import asyncio
-from fastapi import FastAPI, WebSocket, WebSocketDisconnect
+from fastapi import FastAPI, WebSocket, WebSocketDisconnect, Depends, HTTPException, status
+from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
 from typing import List
 from contextlib import asynccontextmanager
-
-# Import your existing logic
-from database import init_db
-from ingester import TelemetryIngester
-from schemas import TelemetryEntry
-from database import get_historical_telemetry
-
+from fastapi.responses import FileResponse
 from datetime import datetime
 from typing import Optional
+from sqlalchemy import select
+from fastapi.staticfiles import StaticFiles
+
+# main logic
+from src.database import init_db, get_historical_telemetry, User, AsyncSessionLocal
+from src.ingester import TelemetryIngester
+from src.schemas import TelemetryEntry, UserCreate
+from src.auth import create_token, verify_token, get_password_hash, verify_password
+
+oauth2_scheme = OAuth2PasswordBearer(tokenUrl="login")
 
 
 # --- Lifespan Manager ---
@@ -39,6 +44,9 @@ async def lifespan(app: FastAPI):
 
 # Pass the lifespan to the FastAPI constructor
 app = FastAPI(title="Train Telemetry API", lifespan=lifespan)
+
+# Mount the static folder right after creating the app
+app.mount("/static", StaticFiles(directory="static"), name="static")
 
 # --- WebSocket Manager ---
 class ConnectionManager:
@@ -84,27 +92,89 @@ async def websocket_callback(data: TelemetryEntry, error_msg: str):
 # --- Endpoints ---
 @app.get("/")
 async def root():
-    return {"status": "Train Telemetry Server Online", "version": "1.0.0"}
+    return FileResponse("index.html")
+
+# --- Security Dependency ---
+async def get_current_user(token: str = Depends(oauth2_scheme)):
+    """Validates the token and returns the user payload."""
+    payload = verify_token(token)
+    if payload is None:
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail="Invalid authentication credentials",
+            headers={"WWW-Authenticate": "Bearer"},
+        )
+    return payload
 
 @app.get("/history")
 async def get_history(
     limit: int = 100, 
     start_date: Optional[datetime] = None, 
-    end_date: Optional[datetime] = None
+    end_date: Optional[datetime] = None,
+    current_user: dict = Depends(get_current_user) # NEW: This protects the route
 ):
     """
     Returns historical telemetry records.
-    Optionally filter by start_date and end_date (ISO 8601 format).
+    Requires a valid JWT token.
     """
+    # You can even check roles here, e.g., if current_user['role'] == 'admin'
     data = await get_historical_telemetry(limit, start_date, end_date)
     return data
 
 @app.websocket("/ws/telemetry")
-async def websocket_endpoint(websocket: WebSocket):
+async def websocket_endpoint(websocket: WebSocket, token: str): # NEW: Require token in URL
+    # Validate the token before accepting the connection
+    user_payload = verify_token(token)
+    
+    if user_payload is None:
+        # Close connection if unauthorized
+        await websocket.close(code=status.WS_1008_POLICY_VIOLATION)
+        return
+
     await manager.connect(websocket)
     try:
         while True:
-            # Keep the connection open and wait for messages from client if needed
             await websocket.receive_text() 
     except WebSocketDisconnect:
         manager.disconnect(websocket)
+
+# --- Authentication Endpoints ---
+@app.post("/signup")
+async def signup(user_data: UserCreate):
+    async with AsyncSessionLocal() as session:
+        # 1. Check if operator ID is already taken
+        query = select(User).where(User.operator_id == user_data.operator_id)
+        result = await session.execute(query)
+        if result.scalar_one_or_none():
+            raise HTTPException(status_code=400, detail="Operator ID already registered")
+        
+        # 2. Create new user with hashed password
+        new_user = User(
+            first_name=user_data.first_name,
+            last_name=user_data.last_name,
+            operator_id=user_data.operator_id,
+            hashed_password=get_password_hash(user_data.password)
+        )
+        session.add(new_user)
+        await session.commit()
+        return {"message": "Operator registered successfully"}
+
+@app.post("/login")
+async def login(form_data: OAuth2PasswordRequestForm = Depends()):
+    async with AsyncSessionLocal() as session:
+        # 1. Find the user by operator_id (which acts as the username)
+        query = select(User).where(User.operator_id == form_data.username)
+        result = await session.execute(query)
+        user = result.scalar_one_or_none()
+        
+        # 2. Verify user exists AND password is correct
+        if not user or not verify_password(form_data.password, user.hashed_password):
+            raise HTTPException(
+                status_code=status.HTTP_401_UNAUTHORIZED,
+                detail="Incorrect Operator ID or password",
+                headers={"WWW-Authenticate": "Bearer"},
+            )
+            
+        # 3. Issue the token
+        token = create_token(user_id=user.id, role=user.role)
+        return {"access_token": token, "token_type": "bearer"}

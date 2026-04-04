@@ -1,15 +1,13 @@
 import asyncio
 from datetime import datetime, timedelta, timezone
-from sqlalchemy import select, delete, Float, String, DateTime
+from sqlalchemy import select, delete, Float, String, DateTime, desc, select, desc, Integer
 from sqlalchemy.ext.asyncio import create_async_engine, async_sessionmaker
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
-from sqlalchemy import desc
-
-from schemas import TelemetryEntry
-
-from datetime import datetime
 from typing import Optional
-from sqlalchemy import select, desc
+
+from src.schemas import TelemetryEntry
+
+
 
 # SQLite connection string (async)
 DATABASE_URL = "sqlite+aiosqlite:///./train_data.db"
@@ -110,3 +108,13 @@ async def cleanup_old_data():
         query = delete(TelemetryRecord).where(TelemetryRecord.timestamp < cutoff_time)
         await session.execute(query)
         await session.commit()
+
+class User(Base):
+    __tablename__ = "users"
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
+    first_name: Mapped[str] = mapped_column(String)
+    last_name: Mapped[str] = mapped_column(String)
+    operator_id: Mapped[str] = mapped_column(String, unique=True, index=True) 
+    hashed_password: Mapped[str] = mapped_column(String)
+    role: Mapped[str] = mapped_column(String, default="operator")

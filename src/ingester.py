@@ -1,8 +1,9 @@
 import json
 import asyncio
 import aiofiles
-from schemas import TelemetryEntry
-from database import init_db, insert_telemetry, cleanup_old_data
+
+from src.schemas import TelemetryEntry
+from src.database import init_db, insert_telemetry, cleanup_old_data
 
 class TelemetryIngester:
     def __init__(self, filepath: str):

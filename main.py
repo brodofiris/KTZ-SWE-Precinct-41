@@ -1,3 +1,4 @@
+
 import asyncio
 from fastapi import FastAPI, WebSocket, WebSocketDisconnect, Depends, HTTPException, status
 from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
@@ -8,6 +9,7 @@ from datetime import datetime
 from typing import Optional
 from sqlalchemy import select
 from fastapi.staticfiles import StaticFiles
+
 
 # main logic
 from src.database import init_db, get_historical_telemetry, User, AsyncSessionLocal
@@ -44,8 +46,7 @@ async def lifespan(app: FastAPI):
 
 # Pass the lifespan to the FastAPI constructor
 app = FastAPI(title="Train Telemetry API", lifespan=lifespan)
-
-# Mount the static folder right after creating the app
+# mount the static lib
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
 # --- WebSocket Manager ---
@@ -92,6 +93,7 @@ async def websocket_callback(data: TelemetryEntry, error_msg: str):
 # --- Endpoints ---
 @app.get("/")
 async def root():
+    """Serves the main frontend dashboard."""
     return FileResponse("index.html")
 
 # --- Security Dependency ---

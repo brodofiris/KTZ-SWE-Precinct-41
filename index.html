@@ -5,91 +5,235 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Train Telemetry Dashboard</title>
     <link rel="stylesheet" href="/static/styles.css">
+    <script src="/static/translations.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-
-    <div id="auth-wrapper" class="container">
+    <header class="top-header">
+        <div class="fleet-selector">
+            <label for="train-id" data-i18n="activeAsset">ACTIVE ASSET:</label>
+            <select id="train-id" onchange="switchTrain()">
+                <option value="train_a">🚆 Train A (Express - Paris)</option>
+                <option value="train_b">🚛 Train B (Freight - Lyon)</option>
+            </select>
+        </div>
         
+        <div id="welcome-message" class="welcome-text">Welcome: Awaiting Login</div>
+        <div id="live-clock" class="clock-text">--/--/---- --:--:--</div>
+        
+        <div style="display: flex; gap: 15px; align-items: center;">
+            <select id="language-selector" class="lang-select" onchange="changeLanguage(this.value)">
+                <option value="en">English</option>
+                <option value="ru">Русский</option>
+                <option value="kk">Қазақша</option>
+            </select>
+            <button id="theme-toggle" class="theme-btn" onclick="toggleTheme()">🌙</button>
+        </div>
+    </header>
+    <div id="auth-wrapper" class="container">
         <div id="login-view">
-            <h2>Train Systems Login</h2>
+            <h2 data-i18n="loginTitle">Train Systems Login</h2>
             <div class="form-group">
-                <label>Operator Username</label>
+                <label data-i18n="opUsername">Operator Username</label>
                 <input type="text" id="login-user" placeholder="e.g. admin">
             </div>
             <div class="form-group">
-                <label>Password</label>
+                <label data-i18n="password">Password</label>
                 <input type="password" id="login-pass" placeholder="Enter password">
             </div>
-            <button onclick="attemptLogin()">Login</button>
+            <button onclick="attemptLogin()" data-i18n="loginBtn">Login</button>
             <div id="login-error" class="error-text"></div>
-            <a class="toggle-link" onclick="switchView('signup-view')">New operator? Sign up here</a>
+            <a class="toggle-link" onclick="switchView('signup-view')" data-i18n="newOp">New operator? Sign up here</a>
         </div>
-
         <div id="signup-view" class="hidden">
-            <h2>Operator Registration</h2>
+            <h2 data-i18n="regTitle">Operator Registration</h2>
             <div style="display: flex; gap: 10px;">
                 <div class="form-group" style="flex: 1;">
-                    <label>First Name</label>
+                    <label data-i18n="fName">First Name</label>
                     <input type="text" id="reg-fname">
                 </div>
                 <div class="form-group" style="flex: 1;">
-                    <label>Last Name</label>
+                    <label data-i18n="lName">Last Name</label>
                     <input type="text" id="reg-lname">
                 </div>
             </div>
             <div class="form-group">
-                <label>Operator Number</label>
+                <label data-i18n="opNumber">Operator Number</label>
                 <input type="text" id="reg-opnum">
             </div>
             <div class="form-group">
-                <label>Password</label>
+                <label data-i18n="password">Password</label>
                 <input type="password" id="reg-pass">
             </div>
             <div class="form-group">
-                <label>Repeat Password</label>
+                <label data-i18n="repeatPass">Repeat Password</label>
                 <input type="password" id="reg-pass2">
             </div>
-            <button onclick="attemptSignUp()">Register Operator</button>
+            <button onclick="attemptSignUp()" data-i18n="regBtn">Register Operator</button>
             <div id="signup-error" class="error-text"></div>
-            <a class="toggle-link" onclick="switchView('login-view')">Already registered? Log in</a>
+            <a class="toggle-link" onclick="switchView('login-view')" data-i18n="alreadyReg">Already registered? Log in</a>
         </div>
     </div>
-
     <div id="dashboard-container" class="hidden dashboard-layout">
-        
         <aside class="sidebar">
             <h3 class="brand-logo">🚆 TrainOS</h3>
             <nav class="sidebar-nav">
-                <a href="#" class="active">Main</a>
-                <a href="#">Details</a>
-                <a href="#">Map</a>
+                <a href="#" id="nav-main" class="active" onclick="switchDashboardView('main-view')" data-i18n="navMain">Main</a>
+                <a href="#" id="nav-details" onclick="switchDashboardView('details-view')" data-i18n="navDetails">Details</a>
+                <a href="#" id="nav-map" onclick="switchDashboardView('map-view')" data-i18n="navMap">Map</a>
+                <a href="#" id="nav-alerts" onclick="switchDashboardView('alerts-view')" data-i18n="navAlerts">Alerts</a>
+                <a href="#" id="nav-controls" onclick="switchDashboardView('controls-view')" data-i18n="navControls">Controls</a>
             </nav>
         </aside>
-
         <div class="main-content">
-            
-            <header class="top-header">
-                <div id="welcome-message" class="welcome-text">Welcome: Operator</div>
-                <div id="live-clock" class="clock-text">--/--/---- --:--:--</div>
-                
-                <div style="display: flex; gap: 15px; align-items: center;">
-                    <select id="language-selector" class="lang-select">
-                        <option value="en">English</option>
-                        <option value="ru">Русский</option>
-                        <option value="kk">Қазақша</option>
-                    </select>
-                    <button id="theme-toggle" class="theme-btn" onclick="toggleTheme()">🌙</button>
-                </div>
-            </header>
-
             <div class="content-body">
-                <h2 style="color: #3498db; text-align: left; margin-top: 0;">Live Telemetry Feed</h2>
-                <div id="telemetry-output">Awaiting systems connection...</div>
+                <div class="details-grid hidden" id="details-view">
+                    <div class="panel chart-panel">
+                        <h3>Kinematics (Speed)</h3>
+                        <div class="canvas-wrapper"><canvas id="chart-kinematics"></canvas></div>
+                    </div>
+                    <div class="panel chart-panel">
+                        <h3 data-i18n="thermometrics">Thermometrics</h3>
+                        <div class="canvas-wrapper"><canvas id="chart-temperature"></canvas></div>
+                    </div>
+                    <div class="panel chart-panel">
+                        <h3 data-i18n="pneumatics">Pneumatic Pressures</h3>
+                        <div class="canvas-wrapper"><canvas id="chart-pneumatics"></canvas></div>
+                    </div>
+                    <div class="panel chart-panel">
+                        <h3 data-i18n="elecLoad">Electrical Load</h3>
+                        <div class="canvas-wrapper"><canvas id="chart-electrical"></canvas></div>
+                    </div>
+                </div>
+                <div class="dashboard-grid" id="main-view">
+                    <div class="panel temp-panel" id="panel-temp">
+                        <h3 data-i18n="thermometrics">Thermometrics</h3>
+                        <div class="stat-line"><span data-i18n="engine">Engine:</span> <strong id="val-engine-temp">--</strong> °C</div>
+                        <div class="stat-line"><span data-i18n="cabin">Cabin:</span> <strong id="val-cabin-temp">--</strong> °C</div>
+                        <div class="stat-line"><span data-i18n="outside">Outside:</span> <strong id="val-outside-temp">--</strong> °C</div>
+                    </div>
+                    <div class="panel left-panel" id="panel-fluid">
+                        <h3 data-i18n="fluidsTitle">Fluids & Pressure</h3>
+                        <p class="flavor-text" data-i18n="fluidsFlavor">Hydraulics and reserve tanks monitoring nominal flow.</p>
+                        <div class="bars-wrapper">
+                            <div class="bar-container">
+                                <div class="bar-label"><span data-i18n="fuel">Fuel</span> <strong id="val-fuel">-- L</strong></div>
+                                <div class="progress-bar"><div class="fill" id="bar-fuel" style="height: 0%;"></div></div>
+                            </div>
+                            <div class="bar-container">
+                                <div class="bar-label"><span data-i18n="mainRes">Main Res</span> <strong id="val-pressure">-- PSI</strong></div>
+                                <div class="progress-bar"><div class="fill" id="bar-pressure" style="height: 0%;"></div></div>
+                            </div>
+                            <div class="bar-container">
+                                <div class="bar-label"><span data-i18n="brake">Brake</span> <strong id="val-brake">-- PSI</strong></div>
+                                <div class="progress-bar"><div class="fill" id="bar-brake" style="height: 0%;"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="meters-wrapper">
+                        <div class="panel" id="panel-speed">
+                            <div class="speedometer">
+                                <div class="speed-value" id="val-speed">0</div>
+                                <div class="speed-unit">km/h</div>
+                            </div>
+                        </div>
+                        <div class="panel" id="panel-fuel-rate">
+                            <div class="speedometer">
+                                <div class="speed-value" id="val-fuel-rate">0.0</div>
+                                <div class="speed-unit">L/s</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel right-panel" id="panel-electrical">
+                        <h3 data-i18n="elecSystems">Electrical Systems</h3>
+                        <div class="bars-wrapper">
+                            <div class="bar-container">
+                                <div class="bar-label"><span data-i18n="tractionV">Traction V</span> <strong id="val-voltage">-- V</strong></div>
+                                <div class="progress-bar"><div class="fill" id="bar-voltage" style="height: 0%;"></div></div>
+                            </div>
+                            <div class="bar-container">
+                                <div class="bar-label"><span data-i18n="tractionA">Traction A</span> <strong id="val-current">-- A</strong></div>
+                                <div class="progress-bar"><div class="fill" id="bar-current" style="height: 0%;"></div></div>
+                            </div>
+                            <div class="bar-container">
+                                <div class="bar-label"><span data-i18n="hepLoad">HEP Load</span> <strong id="val-hep">-- kW</strong></div>
+                                <div class="progress-bar"><div class="fill" id="bar-hep" style="height: 0%;"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel alert-panel" id="panel-alert">
+                        <h3 data-i18n="systemStatus">System Status</h3>
+                        <div id="val-status" class="status-text">AWAITING CONNECTION</div>
+                    </div>
+                </div>
+                <div id="map-view" class="hidden view-layout">
+                    <div class="panel view-container-panel">
+                        <h3 data-i18n="liveGps">Live GPS Tracking</h3>
+                        <div id="map" style="flex: 1; width: 100%; border-radius: 8px; z-index: 1;"></div>
+                        <div id="coords-display" class="flavor-text" style="margin-top: 15px;" data-i18n="awaitingGps">Awaiting GPS lock...</div>
+                    </div>
+                </div>
+                <div id="alerts-view" class="hidden view-layout">
+                    <div class="panel view-container-panel">
+                        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #ddd; padding-bottom: 10px;">
+                            <h3 style="border: none; padding: 0; margin: 0;" data-i18n="alertsTitle">System Event Log</h3>
+                            <button onclick="clearLocalLogs()" class="btn-clear" style="margin: 0; padding: 6px 12px; font-size: 12px; width: auto;" data-i18n="clearView">Clear View</button>
+                        </div>
+                        <div id="alert-log-container" class="table-container">
+                            <table id="alert-table">
+                                <thead>
+                                    <tr>
+                                        <th>Time</th>
+                                        <th>Event Type</th>
+                                        <th>Severity</th>
+                                        <th>Asset</th> 
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="alert-log-body"></tbody>
+                            </table>
+                        </div>
+                        
+                        <div style="text-align: right; margin-top: 15px;">
+                            <button onclick="downloadLog()" class="btn-primary" style="margin: 0; width: auto;" data-i18n="downloadReport">Download Incident Report (.txt)</button>
+                        </div>
+                    </div>
+                </div>
+                <div id="controls-view" class="hidden view-layout">
+                    <div class="chart-row" style="flex: 0 0 auto; margin-bottom: 20px;">
+                        <div class="panel flex-1">
+                            <h3 data-i18n="sysOverrides">System Overrides</h3>
+                            <p class="flavor-text" data-i18n="manualIntervention">Manual intervention for critical subsystems.</p>
+                            <div style="display: flex; flex-direction: column; gap: 10px; flex: 1; justify-content: center;">
+                                <button class="btn-ctrl btn-warn" onclick="sendCommand('RESET_TRIP')" data-i18n="resetTrip">Reset Traction Trip</button>
+                                <button class="btn-ctrl btn-warn" onclick="sendCommand('TOGGLE_HEP')" data-i18n="toggleHep">Toggle Head-End Power</button>
+                                <button class="btn-ctrl btn-warn" onclick="sendCommand('CLEAR_FAULTS')" data-i18n="clearFaults">Clear Software Faults</button>
+                            </div>
+                        </div>
+                        <div class="panel flex-1 glow-critical" style="border: 2px solid #e74c3c;">
+                            <h3 data-i18n="emergProtocols">Emergency Protocols</h3>
+                            <p class="flavor-text" style="color: #e74c3c;" data-i18n="immediateSafety">Immediate safety procedures.</p>
+                            <div style="display: flex; flex-direction: column; gap: 10px; flex: 1; justify-content: center;">
+                                <button class="btn-ctrl btn-danger" onclick="sendCommand('EMERGENCY_BRAKE')" data-i18n="emergBrake">EMERGENCY BRAKE (EB)</button>
+                                <button class="btn-ctrl btn-danger" onclick="sendCommand('CUT_TRACTION')" data-i18n="cutTraction">CUT TRACTION POWER</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel view-container-panel">
+                        <h3 data-i18n="cmdLogTitle">Command Transmission Log</h3>
+                        <div class="terminal-box">
+                            <ul id="command-log" style="list-style: none; padding: 0; margin: 0;">
+                                <li><span style="color: #7f8c8d;">[SYSTEM]</span> Control uplink established. Ready for input...</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        
     </div>
-
     <script src="/static/script.js"></script>
 </body>
 </html>

@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    container_name: my_web_server
+    # Updated command for Uvicorn, binding to all interfaces
+    command: uvicorn main:app --host 0.0.0.0 --port 8000 
+    ports:
+      - "8000:8000"
+    restart: unless-stopped
+
+  dummy-data-worker:
+    build: .
+    container_name: dummy_data_worker
+    command: python src/dummy_data.py
+    restart: unless-stopped
+    depends_on:
+      - web

@@ -36,7 +36,10 @@ class TrainSimulator:
         self.reset_baselines()
         
         # Distances and fuel start once and persist
-        self.fuel_liters = 15000.0  
+        self.initial_fuel_liters = 15000.0
+        self.fuel_liters = self.initial_fuel_liters
+        self.last_fuel_reset_time = time.time()
+        self.fuel_reset_interval = 300  # 5 minutes = 300 seconds
         self.dist_next_stop_km = 45.0
         self.dist_final_stop_km = 850.0
 
@@ -59,6 +62,12 @@ class TrainSimulator:
         return max(min_val, min(max_val, new_val))
 
     def generate_reading(self):
+        current_time = time.time()
+        if current_time - self.last_fuel_reset_time >= self.fuel_reset_interval:
+            self.fuel_liters = self.initial_fuel_liters
+            self.last_fuel_reset_time = current_time
+            print("[i] Fuel reset to baseline")
+        
         # --- CYCLE MANAGEMENT (60s Normal, 15s Emergency, 5s Dead Sensor) = 80s Total ---
         cycle_position = self.tick_count % 45
         

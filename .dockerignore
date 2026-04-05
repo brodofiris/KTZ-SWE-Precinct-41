@@ -1,0 +1,4 @@
+.env
+__pycache__
+train_data.db
+train_telemetry.json
